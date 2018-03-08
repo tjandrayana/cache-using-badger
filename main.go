@@ -19,11 +19,14 @@ func main() {
 	v := "this"
 	sec := 10 // set as 10 second
 
-	// function to insert key value
-	m.InsertKV(k, v, sec)
-
 	var value string
 	var err error
+
+	// function to insert key value
+	err = m.InsertKV(k, v, sec)
+	if err != nil {
+		log.Println(err)
+	}
 
 	// Get The value
 	value, err = m.GetValue(k)
